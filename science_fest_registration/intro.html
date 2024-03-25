@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Resources</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #6A1B9A;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 5px solid #4527A0;
+        }?
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .content {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h1, h2, h3 {
+            padding: 15px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: #6A1B9A;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: blue;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .box {
+            flex-basis: calc(33.33% - 20px);
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .box img {
+            display: block;
+            margin: 0 auto 15px;
+            width: 200px; /* Adjust width */
+            height: 200px;
+        }
+
+        .end {
+            background-color: #6A1B9A;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .contact-icons a {
+            margin: 0 10px;
+            color: white;
+        }
+
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #6A1B9A;
+            margin-top: 20px;
+        }
+
+        .styled-table th, .styled-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .styled-table th {
+            background-color: #6A1B9A;
+            color: white;
+        }
+
+
+        .custom-list {
+            margin-top: 20px;
+        }
+
+        .list-item {
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .list-icon {
+            font-size: 20px;
+            margin-right: 10px;
+            color: #6A1B9A;
+        }
+
+        .list-text {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Student Resources</h1>
+        <img class="logo" src="tutorial.png" alt="Logo">
+    </header>
+
+    <div class="container">
+        <main class="content">
+            <p>Welcome to Student Resources, your one-stop solution for academic excellence and personal growth. Navigating the educational landscape has never been easier!</p>
+            <p>Our mission is to empower students of all levels with comprehensive resources and tools that foster success. Whether you're looking for study materials, career guidance, or a supportive community, we have you covered.</p>
+
+            <h2>Explore Your Pathway</h2>
+            <p>Discover a plethora of resources at your fingertips:</p>
+            <ul>
+                <li>Access <strong>study materials</strong> including lecture notes and guides.</li>
+                <li>Enhance your skills with expert <strong>tutorials and guides</strong>.</li>
+                <li>Engage in flexible learning with our diverse <strong>online courses</strong>.</li>
+                <li>Receive personalized <strong>academic support</strong> from mentors.</li>
+                <li>Prepare for the future with <strong>career development</strong> resources.</li>
+                <li>Collaborate and learn from peers on <strong>community forums</strong>.</li>
+            </ul>
+
+            <h2>Your Journey Starts Here</h2>
+            <p>Join our dynamic community of learners and embark on a transformative educational journey. With Student Resources, your aspirations are limitless!</p>
+            <p>Explore, Learn, and Succeed!</p>
+            <p>The Student Resources Team</p>
+
+            <h2>Explore Your Pathway</h2>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Resource</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Study Materials</td>
+                        <td>Access lecture notes and guides.</td>
+                    </tr>
+                    <tr>
+                        <td>Tutorials and Guides</td>
+                        <td>Enhance your skills with expert tutorials.</td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+
+            <h2>Your Journey Starts Here</h2>
+            <center><div class="custom-list">
+                <div class="list-item">
+                    <span class="list-icon">❤️</span>
+                    <span class="list-text">Join our dynamic community of learners.</span>
+                </div>
+                <div class="list-item">
+                    <span class="list-icon">❤</span>
+                    <span class="list-text">Embark on a transformative educational journey.</span>
+        </main>
+    </div>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="1.jpg" alt="Image 1">
+            <center><h2>STUDY MATERIAL</h2></center>
+        </div>
+        <div class="box">
+            <img src="2.jpg" alt="Image 2">
+            <center><h2>ONLINE GUIDE</h2></center>
+        </div>
+        <div class="box">
+            <img src="3.jpg" alt="Image 3">
+            <center><h2>Courses</h2></center>
+        </div>
+        <div class="box">
+            <img src="4.jpg" alt="Image 4">
+            <center><h2>Internship</h2></center>
+        </div>
+    </div>
+
+    <div class="end">
+        <h3>Contact Us</h3>
+        <div class="contact-icons">
+            <a href="mailto:sambhav302005@gmail.com"><img src="Gmail.png" width="30" height="30" alt="Gmail"></a>
+            <a href="https://instagram.com/sambhav_j30?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><img src="Instagram.png" width="30" height="30" alt="Instagram"></a>
+            <a href="https://www.linkedin.com/in/sambhav-jain-8243a526a"><img src="linkedin.png" width="30" height="30" alt="LinkedIn"></a>
+        </div>
+    </div>
+</body>
+</html>

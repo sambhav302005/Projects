@@ -1,0 +1,52 @@
+<?php
+$server_name = "localhost:3308";
+$username = "root";
+$password = "";
+$database_name = "1bcab";
+
+$conn = mysqli_connect($server_name, $username, $password, $database_name);
+
+if (!$conn) {
+    die("Connection Failed: " . mysqli_connect_error());
+}
+
+// Display all data from the table
+$result = mysqli_query($conn, "SELECT * FROM registration");
+
+if (mysqli_num_rows($result) > 0) {
+    echo "
+    <h1>Student Details</h1>
+    <table border='1'>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Registration Number</th>
+            <th>Email ID</th>
+            <th>Password</th>
+            <th>Action</th>
+        </tr>";
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "
+        <tr>
+            <td>" . $row['id'] . "</td>
+            <td>" . $row['name'] . "</td>
+            <td>" . $row['reg_no'] . "</td>
+            <td>" . $row['email_id'] . "</td>
+            <td>" . $row['password'] . "</td>
+            <td>
+                <a href='edit.php?id=" . $row['id'] . "'>Edit</a>
+                <a href='copy.php?id=" . $row['id'] . "'>Copy</a>
+                <a href='delete.php?id=" . $row['id'] . "'>Delete</a>
+            </td>
+        </tr>";
+    }
+
+    echo "
+    </table>";
+} else {
+    echo "<h1>No records found</h1>";
+}
+
+mysqli_close($conn);
+?>

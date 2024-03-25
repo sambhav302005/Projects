@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Signup Page</title>
+    <style>
+        body {
+            background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: "Open Sans", sans-serif;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            font-size: 20px; /* Increase text size */
+        }
+
+        .box-form {
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: space between;
+            box-shadow: 0 0 20px 6px #090b6f85;
+        }
+
+        @media (max-width: 980px) {
+            .box-form {
+                flex-flow: wrap;
+                text-align: center;
+                align-content: center;
+                align-items: center;
+            }
+        }
+
+        .box-form .left {
+            flex: 1;
+            background: #FFFFFF;
+            overflow: hidden;
+        }
+
+        .box-form .left .overlay {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .box-form .left .overlay h1 {
+            font-size: 10vmax;
+            line-height: 1;
+            font-weight: 900;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .box-form .left .overlay span p {
+            margin-top: 30px;
+            font-weight: 900;
+        }
+
+        .box-form .left .overlay span a {
+            background: #3b5998;
+            color: #FFFFFF;
+            margin-top: 10px;
+            padding: 14px 50px;
+            border-radius: 100px;
+            display: inline-block;
+            box-shadow: 0 3px 6px 1px #042d4657;
+        }
+
+        .box-form .left .overlay span a:last-child {
+            background: #1dcaff;
+            margin-left: 30px;
+        }
+
+        .box-form .right {
+            flex: 1;
+            background: #FFFFFF;
+            padding: 40px;
+            overflow: hidden;
+        }
+
+        .box-form .right h5 {
+            font-size: 6vmax;
+            line-height: 0;
+        }
+
+        .box-form .right p {
+            font-size: 14px;
+            color: #B0B3B9;
+        }
+
+        .box-form .right .inputs {
+            overflow: hidden;
+        }
+
+        .box-form .right input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid #B0B3B9;
+        }
+
+        .box-form .right .remember-me--forget-password {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .box-form .right .remember-me--forget-password input {
+            margin: 0;
+            margin-right: 7px;
+            width: auto;
+        }
+
+        .box-form .right button {
+            color: #fff;
+            font-size: 16px;
+            padding: 12px 35px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 0;
+            outline: 0;
+            box-shadow: 0px 4px 20px 0px #49c628a6;
+            background-image: linear-gradient(135deg, #70F570 10%, #49C628 100%);
+        }
+
+        label {
+            display: block;
+            position: relative;
+            margin-left: 30px;
+        }
+
+        label::before {
+            content: ' \f00c';
+            position: absolute;
+            font-family: FontAwesome;
+            background: transparent;
+            border: 3px solid #70F570;
+            border-radius: 4px;
+            color: transparent;
+            left: -30px;
+            transition: all 0.2s linear;
+        }
+
+        label:hover::before {
+            font-family: FontAwesome;
+            content: ' \f00c';
+            color: #fff;
+            cursor: pointer;
+            background: #70F570;
+        }
+
+        label:hover::before .text-checkbox {
+            background: #70F570;
+        }
+
+        label span.text-checkbox {
+            display: inline-block;
+            height: auto;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.2s linear;
+        }
+
+        label input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+        }
+
+        .mySlides {
+            display: none;
+            position: absolute;
+            top: 45px;
+            left: 20px;
+            down : 20px;
+            width: 100%;
+            height: 85%; /* Increase the length of the message box */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mySlides:nth-child(1) {
+            background-image: url('3.jpg');
+        }
+
+        .mySlides:nth-child(2) {
+            background-image: url('5.jpg');
+        }
+
+        .mySlides:nth-child(3) {
+            background-image: url('leaf.jpg');
+        }
+        textarea {
+          width: 100%;
+          height: 150px;
+          padding: 12px 20px;
+          box-sizing: border-box;
+          border: 2px solid #ccc;
+          border-radius: 4px;
+          background-color: #f8f8f8;
+          font-size: 16px;
+          resize: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-form">
+        <div class="left">
+            <div class="slideshow-container">
+                <div class="mySlides"></div>
+                <div class="mySlides"></div>
+                <div class="mySlides"></div>
+            </div>
+        </div>
+        <div class="right">
+            <h5>Contact Us</h5>
+            <p>Have a question or feedback? Please feel free to contact us using the form below.</p>
+            <form id="contactForm" action="insertdata.php" method="post">
+                <div class="inputs">
+                    <input type="text" placeholder="Your Name" name="Name">
+                    <br>
+                    <input type="email" placeholder="Email" name="Email">
+                    <br>
+                    <textarea placeholder="Your Message" name="Message" rows="10"></textarea>
+                </div>
+                <br><br>
+                <button type="submit" name="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            const slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+        setInterval(function() {
+            plusSlides(1);
+        }, 5000);
+
+        function validateForm() {
+            const emailInput = document.getElementById("email");
+            const ageInput = document.getElementById("age");
+            const email = emailInput.value;
+            const age = parseInt(ageInput.value);
+
+            // Email validation using a regular expression
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isEmailValid = emailRegex.test(email);
+
+            // Age validation
+            const isAgeValid = age > 18;
+
+            if (!isEmailValid) {
+                alert("Please enter a valid email address.");
+                emailInput.focus();
+            } else if (!isAgeValid) {
+                alert("You must be at least 18 years old to sign up.");
+                ageInput.focus();
+            } else {
+                // Form is valid, you can submit it here
+                alert("Signup successful!");
+                // Add code to submit the form to your backend or perform other actions
+            }
+        }
+    </script>
+</body>
+</html>

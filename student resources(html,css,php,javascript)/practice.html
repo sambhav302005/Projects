@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 10px;
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+    </style>
+    <script>
+        function setMaxDate() {
+            var today = new Date().toISOString().split('T')[0];
+            document.getElementById('d').setAttribute('min', today);
+        }
+    </script>
+</head>
+<body onload="setMaxDate()">
+    
+    <form method="post" action="revision.php">
+        <center><h1 >hello</h1></center>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="reg_no">Registration Number:</label>
+        <input type="text" id="reg_no" name="reg_no" required>
+
+        <label for="email_id">Email ID:</label>
+        <input type="email" id="email_id" name="email_id" required>
+
+        <label for="d">date</label>
+        <input type="date" id="d" name="date" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit" name="save">Save</button>
+    </form>
+
+</body>
+</html>

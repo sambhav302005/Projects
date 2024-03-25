@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Maintenance Request System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .hero {
+            background-color: #59769e;
+            color: white;
+            padding: 80px;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #59769e;
+            color: white;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .form-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .button2 {
+            background-color: #3c5982;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button2:hover {
+            background-color: #334e74;
+        }
+
+        .maintenance-request-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .maintenance-request-card h4 {
+            color: #59769e;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            margin-top: 0;
+            margin-bottom: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 50px;
+        }
+
+        footer h4 {
+            color: #fff;
+        }
+
+        .footer-item p {
+            color: #a3a3a3;
+        }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icons a {
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .menu-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-list li {
+            margin-bottom: 10px;
+        }
+
+        .contact-form {
+            text-align: left;
+        }
+
+        #form-submit {
+            background-color: #1a527d;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #form-submit:hover {
+            background-color: #1a527d;
+        }
+        .modal-body {
+            text-align: justify;
+        }
+        .video-background{
+            margin:10px;
+            width:100%
+            height:auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero">
+        <h1>Welcome to the Maintenance Request </h1>
+        <p>Your one-stop solution for quick and efficient maintenance requests.</p>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" height="80">
+        <a class="navbar-brand" href="#">Maintenance Request System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#recent-requests">Recent Requests</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#history">History</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#privacyModal">Privacy Policy</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <center>
+            <video class="video-background" autoplay muted loop>
+                <source src="apar.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+    </center>
+    <div class="container">
+        <div class="form-container">
+            <h2>Maintenance Request Form</h2>
+            <form id="maintenance-request-form">
+                <label for="request-id">Request ID:</label>
+                <input type="text" id="request-id" name="request-id" maxlength="5" required>
+
+                <label for="unit-id">Unit ID:</label>
+                <input type="text" id="unit-id" name="unit-id" maxlength="5" required>
+
+                <label for="resident-id">Resident ID:</label>
+                <input type="text" id="resident-id" name="resident-id" maxlength="5" required>
+                <br>
+                <label for="issue-description">Description of the issue:</label>
+                <textarea id="issue-description" name="issue-description" rows="3" required></textarea>
+
+                <label for="request-date-time">Date and Time of Request:</label>
+                <input type="datetime-local" id="request-date-time" name="request-date-time" disabled required>
+                <button id="submit-btn" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+            <div id="image-container" class="mt-4">
+                <!-- Image container -->
+            </div>
+        </div>
+
+        <div id="recent-requests" class="form-container">
+            <h2>Recent Maintenance Requests</h2>
+            <div class="flex-container">
+                <div class="maintenance-request-card">
+                    <h4>Request 123</h4>
+                    <p>Unit: 201</p>
+                    <p>Status: In Progress</p>
+                    <p>Assigned to: Faizaan</p>
+                </div>
+
+                <div class="maintenance-request-card">
+                    <h4>Request 124</h4>
+                    <p>Unit: 305</p>
+                    <p>Status: Completed</p>
+                    <p>Assigned to: Pranav</p>
+                </div>
+
+                <div class="maintenance-request-card">
+                    <h4>Request 125</h4>
+                    <p>Unit: 101</p>
+                    <p>Status: Pending</p>
+                    <p>Assigned to: Jeril</p>
+                </div>
+            </div>
+        </div>
+
+        <center>
+            <div class="maintenance-button-container">
+                <button class="button2" onclick="window.location.href='maintenance_staff.xml'">Maintenance Staff</button>
+            </div>
+        </center>
+    </div>
+
+    <div class="modal fade" id="privacyModal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="privacyModalLabel">Privacy Policy Acceptance</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Please read and accept our privacy policy before submitting the form.</p>
+                <p><strong>Privacy Policy for Maintenance Page - HOME HORIZON</strong></p>
+                <p><strong>Introduction:</strong> We care for you and your privacy. While you are on this website we collect your login details to make the experience better for you. We may collect information about your browser type and version to ensure compatibility with our website and improve user experience. We do not use third-party services to collect or process information during your visit to the maintenance page. You have the right to:</p>
+                <ol>
+                    <li>Know what information we collect and how it is used.</li>
+                    <li>Request the deletion of your information.</li>
+                </ol>
+                <p>By continuing to use our website and accessing the maintenance page, you agree to the terms outlined in this privacy policy. Thank you for your understanding and cooperation. HOME HORIZON</p>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="privacyCheckbox">
+                    <label class="form-check-label" for="privacyCheckbox">I accept the privacy policy</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="acceptPrivacyPolicy()">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 footer-item">
+            <h4>Home Horizon Website</h4>
+            <p>Step into Home Horizon Apartments: where modern design meets comfort. Your perfect living space awaits, blending style with convenience.</p>
+            <ul class="social-icons">
+              <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="31" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+              </svg></a></li>
+
+              <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="27" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334q.002-.211-.006-.422A6.7 6.7 0 0 0 16 3.542a6.7 6.7 0 0 1-1.889.518 3.3 3.3 0 0 0 1.447-1.817 6.5 6.5 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.32 9.32 0 0 1-6.767-3.429 3.29 3.29 0 0 0 1.018 4.382A3.3 3.3 0 0 1 .64 6.575v.045a3.29 3.29 0 0 0 2.632 3.218 3.2 3.2 0 0 1-.865.115 3 3 0 0 1-.614-.057 3.28 3.28 0 0 0 3.067 2.277A6.6 6.6 0 0 1 .78 13.58a6 6 0 0 1-.78-.045A9.34 9.34 0 0 0 5.026 15"/>
+              </svg></a></li>
+              <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="31" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+              </svg></a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 footer-item">
+            <h4><center>Additional Pages</center></h4>
+            <ul class="menu-list">
+              <li><center><a href="about.html">About Us</a></center></li>
+              <li><center><a href="sambhav/apartment.php">Properties</a></center></li>
+              <li><center><a href="#">Testimonials</a></center></li>
+              <li><center><a href="pranav/contactus.php">Contact Us</a></center></li>
+              <li><center><a href="team.html">Teams</a></center></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 footer-item">
+            <center>
+              <h4>Contact Us</h4>
+              <div class="contact-form">
+                <form id="contact footer-contact" action="" method="post">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                      <fieldset>
+                        <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                      <fieldset>
+                        <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                      </fieldset>
+                    </div>
+                    <div class="col-lg-12">
+                      <fieldset>
+                        <button type="submit" id="form-submit" class="filled-button">Send Message</button>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </center>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+         $(document).ready(function() {
+        // Attach event listener to form submission
+        $('#maintenance-request-form').submit(function(event) {
+            var privacyCheckbox = document.getElementById('privacyCheckbox');
+            if (!privacyCheckbox.checked) {
+                // Prevent form submission
+                event.preventDefault();
+                // Show the privacy policy modal
+                openPrivacyModal();
+            }
+        });
+    });
+         function openPrivacyModal() {
+            $('#privacyModal').modal('show');
+        }
+
+        function acceptPrivacyPolicy() {
+            var privacyCheckbox = document.getElementById('privacyCheckbox');
+            if (privacyCheckbox.checked) {
+
+                saveFormDataAndRedirect();
+                $('#privacyModal').modal('hide');
+            } else {
+                alert('Please accept the privacy policy before submitting the form.');
+            }
+        }
+
+        function saveFormDataAndRedirect() {
+
+            alert('Form submitted after privacy policy acceptance');
+        }
+
+
+    </script>
+</body>
+
+</html>

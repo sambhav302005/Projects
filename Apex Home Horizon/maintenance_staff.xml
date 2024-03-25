@@ -1,0 +1,240 @@
+<?xml version = "1.0"?>
+<?xml-stylesheet type = "text/xsl" href = "main.xsl"?>
+<staffInformation>
+    <staffDetails>
+        <staffId>001</staffId>
+        <staffType>Regular</staffType>
+        <fullName>Ravi Kumar</fullName>
+        <contactInformation>
+            <phoneNumber>99064335560</phoneNumber>
+            <email>ravi.kumar@gmail.com</email>
+        </contactInformation>
+        <scheduleDetails>
+            <workingHours>40</workingHours>
+            <shift>Day Shift</shift>
+        </scheduleDetails>
+        <responsibilities>
+            <role>Plumber</role>
+            <team>Maintenance Team</team>
+        </responsibilities>
+        <trainingHistory>
+            <training>
+                <course>Pipe Installation</course>
+                <completionDate>2023-03-15</completionDate>
+            </training>
+            <training>
+                <course>Leak Detection</course>
+                <completionDate>2023-06-30</completionDate>
+            </training>
+        </trainingHistory>
+        <performanceReviews>
+            <review>
+                <year>2022</year>
+                <rating>4.5</rating>
+            </review>
+            <review>
+                <year>2023</year>
+                <rating>5.0</rating>
+            </review>
+        </performanceReviews>
+        <activeProjects>
+            <project>
+                <projectName>Project X</projectName>
+                <projectManager>Ajay Gupta</projectManager>
+            </project>
+            <project>
+                <projectName>Project Y</projectName>
+                <projectManager>Sunita Sharma</projectManager>
+            </project>
+        </activeProjects>
+        <historicalMaintenanceRequests>
+            <request>
+                <requestId>MR001</requestId>
+                <date>2022-08-20</date>
+                <description>Fixing pipe leaks</description>
+            </request>
+            <request>
+                <requestId>MR002</requestId>
+                <date>2023-02-10</date>
+                <description>Installing new pipes</description>
+            </request>
+        </historicalMaintenanceRequests>
+    </staffDetails>
+    <staffDetails>
+        <staffId>002</staffId>
+        <staffType>Regular</staffType>
+        <fullName>Geeta Singh</fullName>
+        <contactInformation>
+            <phoneNumber>8635678571</phoneNumber>
+            <email>geeta.singh@example.com</email>
+        </contactInformation>
+        <scheduleDetails>
+            <workingHours>40</workingHours>
+            <shift>Night Shift</shift>
+        </scheduleDetails>
+        <responsibilities>
+            <role>Electrician</role>
+            <team>Maintenance Team</team>
+        </responsibilities>
+        <trainingHistory>
+            <training>
+                <course>Electrical Wiring</course>
+                <completionDate>2023-04-15</completionDate>
+            </training>
+            <training>
+                <course>Fault Detection</course>
+                <completionDate>2023-07-30</completionDate>
+            </training>
+        </trainingHistory>
+        <performanceReviews>
+            <review>
+                <year>2022</year>
+                <rating>4.7</rating>
+            </review>
+            <review>
+                <year>2023</year>
+                <rating>4.9</rating>
+            </review>
+        </performanceReviews>
+        <activeProjects>
+            <project>
+                <projectName>Project Z</projectName>
+                <projectManager>Rajesh Mehta</projectManager>
+            </project>
+            <project>
+                <projectName>Project A</projectName>
+                <projectManager>Meena Patel</projectManager>
+            </project>
+        </activeProjects>
+        <historicalMaintenanceRequests>
+            <request>
+                <requestId>MR003</requestId>
+                <date>2022-09-20</date>
+                <description>Fixing electrical faults</description>
+            </request>
+            <request>
+                <requestId>MR004</requestId>
+                <date>2023-03-10</date>
+                <description>Installing new wiring</description>
+            </request>
+        </historicalMaintenanceRequests>
+    </staffDetails>
+    <staffDetails>
+        <staffId>003</staffId>
+        <staffType>Regular</staffType>
+        <fullName>Manish Patel</fullName>
+        <contactInformation>
+            <phoneNumber>8978535672</phoneNumber>
+            <email>manish.patel@example.com</email>
+        </contactInformation>
+        <scheduleDetails>
+            <workingHours>40</workingHours>
+            <shift>Day Shift</shift>
+        </scheduleDetails>
+        <responsibilities>
+            <role>Carpenter</role>
+            <team>Maintenance Team</team>
+        </responsibilities>
+        <trainingHistory>
+            <training>
+                <course>Woodworking</course>
+                <completionDate>2023-05-15</completionDate>
+            </training>
+            <training>
+                <course>Furniture Repair</course>
+                <completionDate>2023-08-30</completionDate>
+            </training>
+        </trainingHistory>
+        <performanceReviews>
+            <review>
+                <year>2022</year>
+                <rating>4.6</rating>
+            </review>
+            <review>
+                <year>2023</year>
+                <rating>4.8</rating>
+            </review>
+        </performanceReviews>
+        <activeProjects>
+            <project>
+                <projectName>Project B</projectName>
+                <projectManager>Vijay Kumar</projectManager>
+            </project>
+            <project>
+                <projectName>Project C</projectName>
+                <projectManager>Rekha Gupta</projectManager>
+            </project>
+        </activeProjects>
+        <historicalMaintenanceRequests>
+            <request>
+                <requestId>MR005</requestId>
+                <date>2022-10-20</date>
+                <description>Fixing furniture</description>
+            </request>
+            <request>
+                <requestId>MR006</requestId>
+                <date>2023-04-10</date>
+                <description>Building new furniture</description>
+            </request>
+        </historicalMaintenanceRequests>
+    </staffDetails>
+    <staffDetails>
+        <staffId>004</staffId>
+        <staffType>Regular</staffType>
+        <fullName>Sharmila Roy</fullName>
+        <contactInformation>
+            <phoneNumber>9785436673</phoneNumber>
+            <email>sharmila.roy@example.com</email>
+        </contactInformation>
+        <scheduleDetails>
+            <workingHours>40</workingHours>
+            <shift>Night Shift</shift>
+        </scheduleDetails>
+        <responsibilities>
+            <role>Painter</role>
+            <team>Maintenance Team</team>
+        </responsibilities>
+        <trainingHistory>
+            <training>
+                <course>Wall Painting</course>
+                <completionDate>2023-06-15</completionDate>
+            </training>
+            <training>
+                <course>Decorative Painting</course>
+                <completionDate>2023-09-30</completionDate>
+            </training>
+        </trainingHistory>
+        <performanceReviews>
+            <review>
+                <year>2022</year>
+                <rating>4.8</rating>
+            </review>
+            <review>
+                <year>2023</year>
+                <rating>5.0</rating>
+            </review>
+        </performanceReviews>
+        <activeProjects>
+            <project>
+                <projectName>Project D</projectName>
+                <projectManager>Ramesh Verma</projectManager>
+            </project>
+            <project>
+                <projectName>Project E</projectName>
+                <projectManager>Sushma Rani</projectManager>
+            </project>
+        </activeProjects>
+        <historicalMaintenanceRequests>
+            <request>
+                <requestId>MR007</requestId>
+                <date>2022-11-20</date>
+                <description>Painting walls</description>
+            </request>
+            <request>
+                <requestId>MR008</requestId>
+                <date>2023-05-10</date>
+                <description>Decorative painting</description>
+            </request>
+        </historicalMaintenanceRequests>
+    </staffDetails>
+</staffInformation>

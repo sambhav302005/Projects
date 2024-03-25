@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Horizon</title>
+  <link rel="stylesheet" href="apartmentstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<div class="bg-img">
+    <div class="container">
+        <header>Sell Apartment</header>
+        <div class="progress-bar">
+            <div class="step">
+                <p>Apartment Detail</p>
+                <div class="bullet">
+                    <span>1</span>
+                </div>
+                <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+                <p>Person Detail</p>
+                <div class="bullet">
+                    <span>2</span>
+                </div>
+                <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+                <p>Submit</p>
+                <div class="bullet">
+                    <span>3</span>
+                </div>
+                <div class="check fas fa-check"></div>
+            </div>
+        </div>
+        <div class="form-outer">
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <div class="page slide-page">
+                    <div class="title">Apartment Info:</div>
+                    <div class="field">
+                        <div class="label">Name</div>
+                        <input type="text" id="property_name" name="property_name" required />
+                    </div>
+                    <div class="field">
+                        <div class="label">Location</div>
+                        <input type="text" id="location" name="location" required />
+                    </div>
+
+
+                    <div class="field">
+                        <div class="label">Price</div>
+                        <input type="text" id="price" name="price" required />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Price per Month</div>
+                        <input type="text" id="price_month" name="price_month" required />
+                    </div>
+
+
+                    <div class="field">
+                        <div class="label">Area</div>
+                        <input type="text" id="area" name="area" required />
+                    </div>
+
+
+                    <div class="field">
+                        <div class="label">Features</div>
+                        <textarea id="features" name="features" required></textarea>
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Images</div>
+                        <input type="file" id="images" name="images[]" multiple required />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Facing</div>
+                        <input type="text" id="facing" name="facing" required />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Type</div>
+                        <input type="text" id="type" name="type" required />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Bathroom</div>
+                        <input type="text" id="bathroom" name="bathroom" required />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Available</div>
+                        <input type="text" id="available" name="available" required />
+                    </div>
+
+                    <div class="field">
+                        <button class="firstNext next">Next</button>
+                    </div>
+                </div>
+
+                <div class="page">
+                    <div class="title">Person Info:</div>
+
+                    <div class="field">
+                        <div class="label">Name</div>
+                        <input type="text" id="person_name" name="person_name" required />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Address</div>
+                        <input type="text" id="address" name="address" required />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Phone Number</div>
+                        <input type="text" id="phone_number" name="phone_number" required />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Email</div>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+
+                    <div class="field">
+                        <div class="label">Person Photo</div>
+                        <input type="file" id="person_photo" name="person_photo" required />
+                    </div>
+
+                    <div class="field btns">
+                        <button class="prev-1 prev">Previous</button>
+                        <button class="next-1 next">Next</button>
+                    </div>
+                </div>
+
+                <div class="page">
+                    <div class="title">Submit</div>
+                    <div class="field">
+                        <div class="label">I agree to Sell the property</div>
+                        <input type="checkbox" id="agreeCheckbox" required onchange="validateForm()">
+                    </div>
+
+                    <div class="field btns">
+                        <button class="prev-5 prev" onclick="nextPrev(-1)">Previous</button>
+                        <button class="submit" id="submitBtn" onclick="nextPrev(1)">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Get all the steps
+    const steps = document.querySelectorAll(".step");
+
+    // Function to mark steps as completed
+    function markStepAsCompleted(stepIndex) {
+        steps.forEach((step, index) => {
+            if (index <= stepIndex) {
+                step.querySelector(".check").style.display = "block";
+            } else {
+                step.querySelector(".check").style.display = "none";
+            }
+        });
+    }
+
+    // Event listener for next button click on the first page
+    const firstNextButton = document.querySelector(".firstNext");
+    firstNextButton.addEventListener("click", () => {
+        markStepAsCompleted(0); // Mark the first step as completed
+    });
+
+    // Event listener for next button clicks on subsequent pages
+    const nextButtons = document.querySelectorAll(".next");
+    nextButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            const currentStep = index;
+            // Assuming the form is valid and ready to proceed
+            if (validateForm()) {
+                markStepAsCompleted(currentStep);
+                if (currentStep > 0) {
+                    markStepAsCompleted(currentStep - 1);
+                }
+            }
+        });
+    });
+
+    // Event listener for previous button clicks
+    const prevButtons = document.querySelectorAll(".prev");
+    prevButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            const currentStep = index;
+            markStepAsCompleted(currentStep);
+            if (currentStep > 0) {
+                markStepAsCompleted(currentStep - 1);
+            }
+        });
+    });
+
+    // Validation function, replace with your own validation logic
+    function validateForm() {
+        // Example validation, replace with actual form validation
+        const inputs = document.querySelectorAll('input[required], textarea[required], select[required]');
+        let isValid = true;
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                isValid = false;
+            }
+        });
+        return isValid;
+    }
+</script>
+
+
+
+
+
+
+</body>
+</html>

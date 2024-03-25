@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Fest Registration</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            font-size: 36px;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        /* Registration form styles */
+        .registration-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .registration-form input[type="text"],
+        .registration-form input[type="email"],
+        .registration-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .registration-form input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .registration-form .services-checkbox {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        .registration-form .button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
+            }
+            nav ul {
+                text-align: left;
+            }
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Science Fest Registration</h1>
+            <p>Welcome to our science fest registration page.</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Registration</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container content">
+        <div class="registration-form">
+            <h2>Registration Form</h2>
+            <form action="process_payment.php" method="POST">
+                <!-- Participant Information -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required>
+
+                <label for="category">Participant Category:</label>
+                <select id="category" name="category" required>
+                    <option value="Student">Student</option>
+                    <option value="Faculty Member">Faculty Member</option>
+                    <option value="Professional">Professional</option>
+                    <option value="Company/Firm Representative">Company/Firm Representative</option>
+                </select>
+
+                <!-- Payment Information -->
+                <label for="currency">Payment Currency:</label>
+                <select id="currency" name="currency" required>
+                    <option value="Rupees">Rupees</option>
+                    <option value="Dollar">Dollar</option>
+                </select>
+
+                <label for="payment-method">Payment Method:</label>
+                <input type="radio" id="credit-card" name="payment-method" value="Credit Card" required>
+                <label for="credit-card">Credit Card</label>
+                <input type="radio" id="debit-card" name="payment-method" value="Debit Card" required>
+                <label for="debit-card">Debit Card</label>
+                <input type="radio" id="demand-draft" name="payment-method" value="Demand Draft" required>
+                <label for="demand-draft">Demand Draft</label>
+
+                <!-- Hotel Accommodation -->
+                <label>Hotel Accommodation:</label>
+                <input type="radio" id="hotel1" name="accommodation" value="Hotel 1"> <label for="hotel1">Hotel 1</label>
+                <input type="radio" id="hotel2" name="accommodation" value="Hotel 2"> <label for="hotel2">Hotel 2</label>
+                <input type="radio" id="hotel3" name="accommodation" value="Hotel 3"> <label for="hotel3">Hotel 3</label>
+                <input type="radio" id="hotel4" name="accommodation" value="Hotel 4"> <label for="hotel4">Hotel 4</label>
+
+                <!-- Additional Services -->
+                <label>Additional Services:</label>
+                <input type="checkbox" class="services-checkbox" id="service1" name="services[]" value="Service 1">
+                <label for="service1">Service 1</label>
+                <input type="checkbox" class="services-checkbox" id="service2" name="services[]" value="Service 2">
+                <label for="service2">Service 2</label>
+                <!-- Add more services checkboxes as needed -->
+
+                <!-- Submit Button -->
+                <input type="submit" class="button" value="Submit Registration">
+            </form>
+        </div>
+    </div>
+
+    <!-- Images Section -->
+    <div class="

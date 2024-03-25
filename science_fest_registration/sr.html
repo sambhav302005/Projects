@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Fest Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Science Fest Registration</h1>
+    </div>
+    <div class="container">
+        <div class="left-column">
+            <form action="intro.html">
+                <!-- Participant Information -->
+                <div class="form-group">
+                    <h2>Participant Information</h2>
+                    <br>
+                    <label for="participant_type">Participant Type:</label>
+                    <select name="participant_type" id="participant_type">
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty Member</option>
+                        <option value="professional">Professional</option>
+                        <option value="company_rep">Company/Firm Representative</option>
+                    </select>
+                </div>
+
+                <!-- Payment Information -->
+                <div class="form-group">
+                    <h2>Payment Information</h2>
+                    <label for="currency">Currency:</label>
+                    <input type="radio" name="currency" value="rupees" checked> Rupees
+                    <input type="radio" name="currency" value="dollars"> Dollars
+                    <br><br>
+                    <label for="payment_method">Payment Method:</label>
+                    <input type="checkbox" name="payment_method" value="credit_card"> Credit Card
+                    <input type="checkbox" name="payment_method" value="debit_card"> Debit Card
+                    <input type="checkbox" name="payment_method" value="demand_draft"> Demand Draft
+                </div>
+
+                <!-- Accommodation Information -->
+                <div class="form-group">
+                    <h2>Accommodation Information</h2>
+                    <p>Select your preferred hotel:</p>
+
+                    <!-- Hotel 1: SAMHI -->
+                    <label class="hotel-container">
+                        <input type="radio" name="hotel_selection" value="hotel1">
+                        <img src="h1.jpg" alt="Hotel 1" style="width: 150px; height: 150px;">
+                        <div class="hotel-name-overlay">
+                            <span class="hotel-name">SAMHI</span>
+                        </div>
+                    </label>
+                    <div class="services">
+                        <label for="samhi_services">Services at SAMHI:</label>
+                        <select name="samhi_services" id="samhi_services">
+                            <option value="Swimming Pool">Swimming Pool</option>
+                            <option value="Gym">Gym</option>
+                            <option value="Free Wi-Fi">Free Wi-Fi</option>
+                            <option value="Room Service">Room Service</option>
+                            <option value="Restaurant">Restaurant</option>
+
+                        </select>
+                    </div>
+
+
+                    <label class="hotel-container">
+                        <input type="radio" name="hotel_selection" value="hotel2">
+                        <img src="h2.webp" alt="Hotel 2" style="width: 150px; height: 150px;">
+                        <div class="hotel-name-overlay">
+                            <span class="hotel-name">&nbsp;&nbsp;FOUR SEASON</span>
+                        </div>
+                    </label>
+                    <div class="services">
+                        <label for="four_season_services">Services at FOUR SEASON:</label>
+                        <select name="four_season_services" id="four_season_services">
+                            <option value="Spa">Spa</option>
+                            <option value="Conference Facilities">Conference Facilities</option>
+                            <option value="Parking">Parking</option>
+                            <option value="Bar/Lounge">Bar/Lounge</option>
+                            <option value="24-hour Front Desk">24-hour Front Desk</option>
+
+                        </select>
+                    </div>
+
+
+                    <label class="hotel-container">
+                        <input type="radio" name="hotel_selection" value="hotel3">
+                        <img src="h3.jpg" alt="Third Hotel" style="width: 150px; height: 150px;">
+                        <div class="hotel-name-overlay">
+                            <span class="hotel-name">Margaritaville</span>
+                        </div>
+                    </label>
+                    <div class="services">
+                        <label for="third_hotel_services">Services at Third Hotel:</label>
+                        <select name="third_hotel_services" id="third_hotel_services">
+                            <option value="Parking">Parking</option>
+                            <option value="Spa">Spa</option>
+                            <option value="AC">AC</option>
+
+                        </select>
+                    </div>
+
+
+                    <label class="hotel-container">
+                        <input type="radio" name="hotel_selection" value="hotel4">
+                        <img src="h4.jpg" alt="Fourth Hotel" style="width: 150px; height: 150px;">
+                        <div class="hotel-name-overlay">
+                            <span class="hotel-name">hilton gardon</span>
+                        </div>
+                    </label>
+                    <div class="services">
+                        <label for="fourth_hotel_services">Services at Fourth Hotel:</label>
+                        <select name="fourth_hotel_services" id="fourth_hotel_services">
+                            <option value="AC">AC</option>
+                            <option value="WiFi">WiFi</option>
+                            <option value="Gym">Gym</option>
+
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <h2>Personal Information</h2>
+                    <br>
+                    <label for="full_name">Full Name:</label>
+                    <input type="text" name="full_name" id="full_name" required>
+                    <br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" value="Submit Registration">
+                </div>
+            </form>
+        </div>
+
+
+        <div class="right-column">
+            <div class="contact-section">
+                <h2 class="contact-header">Quick Glance To Us</h2>
+
+                <br>
+                <video width="520" height="340" controls>
+                    <source src="cp1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                 <div class="additional-images">
+
+                    <img src="5.webp" width="550px" height="550px" alt="Image 1">
+                    <br>
+
+                    <img src="6.jpg" width="550px" height="550px" alt="Image 2">
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.584519176046!2d77.60360070758557!3d12.934404087324872!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15392f6ea2f9%3A0x851befe3b3f1d0b0!2sCentral%20campus%2C%20Christ%20University!5e0!3m2!1sen!2sin!4v1696069825615!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                 <h2 class="contact-header">Contact Us</h2>
+                <p class="contact-info">If you have any questions or need assistance, please feel free to contact us:</p>
+                <p class="contact-info"><i class="fas fa-envelope"></i>Email: <a href="mailto:Science Fest_Registration_23@example.com">example@example.com</a></p>
+                <p class="contact-info"><i class="fas fa-phone"></i>Phone: +1 (123) 456-7890</p>
+
+
+                <div class="social-media">
+                    <a href="https://www.facebook.com/your-facebook-link" target="_blank">
+                        <img src="facebook.png" width="50px" height="50px" alt="Facebook">
+                    </a>
+                    <a href="https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin" target="_blank">
+                        <img src="linkedin.png" width="50px" height="50px" alt="linkedin">
+                    </a>
+                    <a href="https://www.instagram.com/your-instagram-link" target="_blank">
+                        <img src="instagram.png" width="50px" height="50px" alt="Instagram">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

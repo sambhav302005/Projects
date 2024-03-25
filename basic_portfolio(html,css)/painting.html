@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Painting Gallery</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  p {
+    color: blue;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-: center;
+    padding: 2rem;
+  }
+  .painting {
+    width: 45%;
+    margin: 1rem;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+  }
+  .painting img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  .painting-title {
+    padding: 1rem;
+    text-align: center;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Painting Gallery</h1>
+  </header>
+  <div class="container">
+    <div class="painting">
+      <img src="paint_1.jpeg" alt="Painting 1">
+      <div class="painting-title"><p>Class 12 Project</p></div>
+    </div>
+    <div class="painting">
+      <img src="paint_2.jpeg" alt="Painting 2">
+      <div class="painting-title"><p>Class 10 Project</p><br><img src="cer.jpeg" alt="Painting 1"></div>
+    </div>
+  </div>
+</body>
+</html>

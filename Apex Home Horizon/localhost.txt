@@ -1,0 +1,13 @@
+http://localhost/phpmyadmin/
+# 47
+http://localhost/sem2/g-10/Apex%20Home%20Horizon/				
+
+#52
+http://localhost/sem2/g-10/Apex%20Home%20Horizon/pranav/visitor_log.php
+http://localhost/sem2/g-10/Apex%20Home%20Horizon/pranav/contactus.php
+
+#57
+http://localhost/sem2/g-10/Apex%20Home%20Horizon/combine.html
+
+#58
+http://localhost/sem2/g-10/Apex%20Home%20Horizon/sambhav/apartment.php

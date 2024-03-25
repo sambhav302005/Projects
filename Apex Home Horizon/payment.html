@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="assets/css/payment_styles.css">
+    <script src="script.js"></script>
+    <script>
+        function validateAndSubmit() {
+            // Validate Name
+            var name = document.getElementById('name').value.trim();
+            if (!/^[a-zA-Z\s]+$/.test(name)) {
+                alert("Please enter a valid name with only letters.");
+                return false;
+            }
+
+            // Validate Transaction Id
+            var transactionId = document.getElementById('transaction').value.trim();
+            if (transactionId === "" || isNaN(transactionId) || transactionId.length > 5) {
+                alert("Please enter a valid Transaction Id with a maximum of 5 digits.");
+                return false;
+            }
+
+            // Validate Resident Id
+            var residentId = document.getElementById('resident').value.trim();
+            if (residentId === "" || isNaN(residentId) || residentId.length > 5) {
+                alert("Please enter a valid Resident Id with a maximum of 5 digits.");
+                return false;
+            }
+
+            // Validate Address
+            var flat = document.getElementById('flat').value.trim();
+            var building = document.getElementById('building').value.trim();
+            var society = document.getElementById('society').value.trim();
+            if (flat === "" || building === "" || society === "") {
+                alert("Please enter a valid address.");
+                return false;
+            }
+
+            // Validate Building Name and Society Name
+            if (!/^[a-zA-Z\s]+$/.test(building) || !/^[a-zA-Z\s]+$/.test(society)) {
+                alert("Building name and society name should contain only letters.");
+                return false;
+            }
+
+            // Validate Contact No
+            var contactNo = document.getElementById('contactNo').value.trim();
+            if (contactNo === "" || isNaN(contactNo) || contactNo.length !== 10) {
+                alert("Please enter a valid 10-digit contact number.");
+                return false;
+            }
+
+            // Validate Payment Date
+            var paymentDate = document.getElementById('date').value.trim();
+            if (paymentDate === "") {
+                alert("Please select a payment date.");
+                return false;
+            }
+
+            // Validate Payment Mode
+            var paymentMode = document.getElementById('paymentMode').value.trim();
+            if (paymentMode === "") {
+                alert("Please select a payment mode.");
+                return false;
+            }
+
+            // Validate Amount
+            var amount = document.getElementById('amount').value.trim();
+            if (amount === "" || isNaN(amount) || parseFloat(amount) < 0) {
+                alert("Please enter a valid amount.");
+                return false;
+            }
+
+            // Validate Feedback
+            var feedback = document.getElementById('feedback').value.trim();
+
+            // If all validations pass, submit the form
+            document.getElementById('payment').submit();
+        }
+
+        function selectPaymentMode(element, mode) {
+            // Remove the 'selected-payment-option' class from all options
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('selected-payment-option');
+            });
+
+            // Set the 'selected-payment-option' class to the clicked option
+            element.classList.add('selected-payment-option');
+
+            // Set the selected payment mode in the hidden input field
+            document.getElementById('paymentMode').value = mode;
+        }
+    </script>
+
+
+    <style>
+        .payment-options-container {
+            display: flex;
+            margin-top: 5px;
+        }
+        .validation-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .payment-option {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #f2f2f2;
+            border: 1.5px solid #3c5982;
+            border-radius: 10px;
+            margin-right: 5px;
+        }
+
+        .payment-option:hover {
+            background-color: #3c5982;
+            color: white;
+        }
+
+        .selected-payment-option {
+            background-color: #3c5982;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="bg">
+
+        <div class="white-container">
+            <h2>Payment</h2>
+
+            <form id="payment" action="payment.php" method="post">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter Name" required>
+                <div id="nameValidation" class="validation-message"></div> <!-- Validation message container -->
+
+                <!-- Modify your script to include real-time validation -->
+                <script>
+                    document.getElementById('name').addEventListener('input', function () {
+                        var name = this.value.trim();
+                        var validationMessage = document.getElementById('nameValidation');
+
+                        if (name === "") {
+                            validationMessage.textContent = ""; // No message if empty
+                        } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+                            validationMessage.textContent = "Please enter a valid name with only letters.";
+                            this.value = name.replace(/[^a-zA-Z\s]/g, ''); // Remove non-letter characters
+                        } else {
+                            validationMessage.textContent = ""; // No message if valid
+                        }
+                    });
+                </script>
+                <label for="transaction">Transaction Id:</label>
+                <input type="number" id="transaction" name="transaction" placeholder="Transaction Id" required>
+                <div id="transactionValidation" class="validation-message"></div> <!-- Validation message container -->
+
+                <!-- Modify your script to include real-time validation -->
+                <script>
+                    document.getElementById('transaction').addEventListener('input', function () {
+                        var transactionId = this.value.trim();
+                        var validationMessage = document.getElementById('transactionValidation');
+
+                        if (transactionId === "") {
+                            validationMessage.textContent = ""; // No message if empty
+                        } else if (isNaN(transactionId) || transactionId.length > 5) {
+                            validationMessage.textContent = "Please enter a valid Transaction Id with a maximum of 5 digits.";
+                            this.value = transactionId.slice(0, 5); // Limit to 5 digits
+                        } else {
+                            validationMessage.textContent = ""; // No message if valid
+                        }
+                    });
+                </script>
+                <label for="resident">Resident Id:</label>
+                <input type="number" id="resident" name="resident" placeholder="Resident Id" required>
+                <div id="residentValidation" class="validation-message"></div> <!-- Validation message container -->
+
+                <!-- Modify your script to include real-time validation -->
+                <script>
+                    document.getElementById('resident').addEventListener('input', function () {
+                        var residentId = this.value.trim();
+                        var validationMessage = document.getElementById('residentValidation');
+
+                        if (residentId === "") {
+                            validationMessage.textContent = ""; // No message if empty
+                        } else if (isNaN(residentId) || residentId.length > 5) {
+                            validationMessage.textContent = "Please enter a valid Resident Id with a maximum of 5 digits.";
+                            this.value = residentId.slice(0, 5); // Limit to 5 digits
+                        } else {
+                            validationMessage.textContent = ""; // No message if valid
+                        }
+                    });
+                </script>
+                <label for="gmail">Email</label>
+                <input type="email" id="gmail" name="gmail" placeholder="Email" required>
+                <div id="gmailValidation" class="validation-message"></div> 
+
+                
+                <script>
+                    document.getElementById('gmail').addEventListener('input', function () {
+                        var gmail = this.value.trim();
+                        var validationMessage = document.getElementById('gmailValidation');
+                
+                        if (gmail === "") {
+                            validationMessage.textContent = ""; // No message if empty
+                        } else if (!/^.+@.+\..+$/.test(gmail)) {
+                            validationMessage.textContent = "Please enter a valid email address.";
+                        } else {
+                            validationMessage.textContent = ""; // No message if valid
+                        }
+                    });
+                </script>
+                <label for="address">Address:</label>
+                <input type="number" id="flat" name="flat" placeholder="Flat No" required><br>
+                <input type="text" id="building" name="building" placeholder="Building Name" required><br>
+                <div id="buildingValidation" class="validation-message"></div> 
+
+                
+                <script>
+                    document.getElementById('building').addEventListener('input', function () {
+                        var building = this.value.trim();
+                        var validationMessage = document.getElementById('buildingValidation');
+            
+                        if (building === "") {
+                            validationMessage.textContent = ""; 
+                        } else if (!/^[a-zA-Z\s]+$/.test(building)) {
+                            validationMessage.textContent = "Building name should contain only letters.";
+                            this.value = building.replace(/[^a-zA-Z\s]/g, ''); 
+                        } else {
+                            validationMessage.textContent = ""; // No message if valid
+                        }
+                    });
+                </script>
+                <input type="text" id="society" name="society" placeholder="Society Name" required>
+                <div id="societyValidation" class="validation-message"></div> <!-- Validation message container -->
+
+                <!-- Modify your script to include real-time validation -->
+                <script>
+                    document.getElementById('society').addEventListener('input', function () {
+                        var society = this.value.trim();
+                        var validationMessage = document.getElementById('societyValidation');
+            
+                        if (society === "") {
+                            validationMessage.textContent = ""; // No message if empty
+                        } else if (!/^[a-zA-Z\s]+$/.test(society)) {
+                            validationMessage.textContent = "Society name should contain only letters.";
+                            this.value = society.replace(/[^a-zA-Z\s]/g, ''); // Remove non-letter characters
+                        } else {
+                            validationMessage.textContent = ""; // No message if valid
+                        }
+                    });
+                </script>
+
+                <label for="contactNo">Contact No:</label>
+                <input type="number" id="contactNo" name="contactNo" placeholder="Contact No" required>
+                <div id="contactNoValidation" class="validation-message"></div> <!-- Validation message container -->
+
+                <!-- Modify your script to include real-time validation -->
+                <script>
+                    document.getElementById('contactNo').addEventListener('input', function () {
+                        var contactNo = this.value.trim();
+                        var validationMessage = document.getElementById('contactNoValidation');
+
+                        if (contactNo === "") {
+                            validationMessage.textContent = ""; // No message if empty
+                        } else if (isNaN(contactNo) || contactNo.length !== 10) {
+                            validationMessage.textContent = "Please enter a valid 10-digit contact number.";
+                            this.value = contactNo.slice(0, 10); // Limit to 10 digits
+                        } else {
+                            validationMessage.textContent = ""; // No message if valid
+                        }
+                    });
+                </script>
+                <label for="date">Payment Date:</label>
+                <input type="date" id="date" name="date" placeholder="Payment Date" required><br><br>
+                <div id="dateValidation" class="validation-message"></div> <!-- Validation message container -->
+
+                <!-- Modify your script to include real-time validation -->
+                <script>
+                    document.getElementById('date').addEventListener('input', function () {
+                        var paymentDate = this.value.trim();
+                        var validationMessage = document.getElementById('dateValidation');
+
+                        if (paymentDate === "") {
+                            validationMessage.textContent = ""; // No message if empty
+                        } else {
+                            var currentDate = new Date();
+                            var enteredDate = new Date(paymentDate);
+
+                            if (enteredDate > currentDate) {
+                                validationMessage.textContent = "Payment date cannot be a future date.";
+                                this.value = ""; // Clear the input field
+                            } else {
+                                validationMessage.textContent = ""; // No message if valid
+                            }
+                        }
+                    });
+                </script>
+
+                <label for="paymentMode">Payment Mode:</label>
+                <div class="payment-options-container">
+                    <div class="payment-option" onclick="selectPaymentMode(this, 'Credit Card')">Credit Card</div>
+                    <div class="payment-option" onclick="selectPaymentMode(this, 'Debit Card')">Debit Card</div>
+                    <div class="payment-option" onclick="selectPaymentMode(this, 'UPI')">UPI</div>
+                    <div class="payment-option" onclick="selectPaymentMode(this, 'Net Banking')">Net Banking</div>
+                </div>
+                <input type="hidden" id="paymentMode" name="paymentMode">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" placeholder="₹">
+                <div id="amountValidation" class="validation-message"></div> <!-- Validation message container -->
+
+                <!-- Modify your script to include real-time validation -->
+                <script>
+                    document.getElementById('amount').addEventListener('input', function () {
+                        var amount = this.value.trim();
+                        var validationMessage = document.getElementById('amountValidation');
+
+                        if (amount === "" || isNaN(amount) || parseFloat(amount) <= 0) {
+                            validationMessage.textContent = "Please enter a valid amount greater than 0.";
+                            this.value = amount.replace(/[^\d.-]/g, ''); // Remove non-numeric characters
+                        } else {
+                            validationMessage.textContent = ""; // No message if valid
+                        }
+                    });
+                </script>
+                <label for="feedback">Feedback:</label>
+                <textarea id="feedback" name="feedback" placeholder="(if any)" rows="2" cols="40"></textarea>
+                <br><br>
+                <button class= "button1" type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+</html>
